@@ -18,7 +18,7 @@
  */
  function permissionCallback (button) {
                 if (button === 1)
-                    gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-12345678-1", 10);
+                    gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 10);
             }
 
             function nativePluginResultHandler (result) {
@@ -88,6 +88,6 @@ var app = {
 
         gaPlugin = window.plugins.gaPlugin;
 
-        gaPlugin.init(successHandler, errorHandler, "UA-35462480-6", 10);
+        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 10);
     }
 };
