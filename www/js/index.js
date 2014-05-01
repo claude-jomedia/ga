@@ -48,13 +48,13 @@
             }
         
             function PageButtonClicked() {
-                gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
+                gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/login");
             }
             
             function goingAway() {
                 gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
             }
-            
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -89,5 +89,9 @@ var app = {
         gaPlugin = window.plugins.gaPlugin;
 
         gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 10);
+
+        gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/login");
+
+        gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event", "screen-viewed", "screen-viewed", 1);
     }
 };
