@@ -25,7 +25,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
     </head>
-    <body onunload="goingAway();" id="stage" class="theme">
+    <body id="stage" class="theme">
     <h1>Test Google Analytics Plugin</h1>
     <div class="space"></div>
     <div>
@@ -44,7 +44,10 @@
         <script type="text/javascript" src="GAPlugin.js"></script>
         <script type="text/javascript">
 
-
+function TrackButtonClicked() {
+    console.log('TrackButtonClicked');
+        console.warn('TrackButtonClicked2');
+}
 
 
                 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
