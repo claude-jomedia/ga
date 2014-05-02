@@ -50,6 +50,6 @@ var app = {
         gaPlugin = window.plugins.gaPlugin;  
         gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, myAnalyticsAccount, 10);
         gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/login");
-        gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "/login", "screen-viewed", "event only", 1);
+        // gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "/login", "screen-viewed", "event only", 1);
     }
 };
