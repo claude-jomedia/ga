@@ -93,17 +93,23 @@
 
                 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     function onDeviceReady() {
+        console.log('ready');
 var gaPlugin;
 gaPlugin = window.plugins.gaPlugin;
+console.log('gaPlugin');
+console.log(gaPlugin);
 
         gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 1);
+
+        console.log('gaPlugin init');
+console.log(gaPlugin);
 
         gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/login");
         gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "login");
 
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event", "screen-viewed", "screen-viewed", 1);
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event", "screen-viewed", "screen-viewed", 1);
-        
+
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "screen-viewed", "screen-viewed", "screen-viewed", 1);
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "page", "screen-viewed", "screen-viewed", 1);
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "page", "/login", "screen-viewed", 1);
