@@ -45,6 +45,11 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        if (window.plugins.gaPlugin) 
+          alert('not null'); 
+        else 
+          alert('is null');
         
         // Initializing Google Analytics 
         gaPlugin = window.plugins.gaPlugin;  
