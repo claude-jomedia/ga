@@ -21,51 +21,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="GAPlugin.js"></script>
-        <script type="text/javascript">
-
-        function nativePluginResultHandler (result) {
-                //alert('nativePluginResultHandler - '+result);
-                console.log('nativePluginResultHandler: '+result);
-
-            }
-        
-            function nativePluginErrorHandler (error) {
-                //alert('nativePluginErrorHandler - '+error);
-                console.log('nativePluginErrorHandler: '+error);
-            }
-
-function TrackButtonClicked() {
-    console.log('gaPlugin init');
-    console.log(gaPlugin);
-}
-
-var gaPlugin;
-
-                // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    function onDeviceReady() {
-        
-        gaPlugin = window.plugins.gaPlugin;
-
-        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 10);
-
-    }
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-        </script>
     </head>
-    <body id="stage" class="theme">
-    <h1>Test Google Analytics Plugin</h1>
-    <div class="space"></div>
-    <div>
-        <a href="#" class="btn large" onclick="TrackButtonClicked();">Track Event</a>
-        <a href="#" class="btn large" onclick="VariableButtonClicked();">Track Event with Variable</a>
-        <a href="#" class="btn large" onclick="PageButtonClicked();">Track Page</a>
-    </div>
+    <body>
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
@@ -73,6 +34,30 @@ var gaPlugin;
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+        <script type="text/javascript" src="phonegap.js"></script>
         
+        <script src="GAPlugin.js"></script>
+        <script type="text/javascript" charset="utf-8"> 
+
+        // Setting up Google Analytics variables
+        var myAnalyticsAccount = "UA-35462480-6";
+        var gaPlugin;
+        
+        // Google Analytics Error Handlyer
+        function nativePluginErrorHandler(result) {
+            alert('errorHandler: '+result);
+        }
+        
+          // Google Analytics Success Handler     
+        function nativePluginResultHandler(result) {
+            alert('successHandler: '+result);
+        }    
+        
+    </script> 
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
     </body>
 </html>
