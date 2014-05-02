@@ -46,7 +46,15 @@
 
 function TrackButtonClicked() {
     console.log('TrackButtonClicked');
-        console.warn('TrackButtonClicked2');
+var gaPlugin;
+gaPlugin = window.plugins.gaPlugin;
+console.log('gaPlugin');
+console.log(gaPlugin);
+
+        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 1);
+
+        console.log('gaPlugin init');
+console.log(gaPlugin);
 }
 
 
