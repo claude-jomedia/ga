@@ -44,10 +44,12 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        console.warn('Received Event: ' + id);
 
-        if (window.plugins.gaPlugin) 
-          alert('not null'); 
+        if (window.plugins.gaPlugin) {
+            alert('not null'); 
+            console.warn(window.plugins.gaPlugin);
+        }
         else 
           alert('is null');
         
