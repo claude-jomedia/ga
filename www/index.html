@@ -40,23 +40,18 @@
             }
 
 function TrackButtonClicked() {
-    console.log('TrackButtonClicked');
-var gaPlugin;
-gaPlugin = window.plugins.gaPlugin;
-// console.log('gaPlugin');
-// console.log(gaPlugin);
-
-        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 1);
-
-        console.log('gaPlugin init');
-console.log(gaPlugin);
+    console.log('gaPlugin init');
+    console.log(gaPlugin);
 }
 
+var gaPlugin;
 
                 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     function onDeviceReady() {
-        console.log('ready');
-        console.warn('ready2');
+        
+        gaPlugin = window.plugins.gaPlugin;
+
+        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 10);
 
     }
 
