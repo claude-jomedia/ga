@@ -49,7 +49,7 @@ var app = {
         // Initializing Google Analytics 
         gaPlugin = window.plugins.gaPlugin;  
         gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, myAnalyticsAccount, 10);
+        gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "/login", "screen-viewed", "event only", 1);
         gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/login");
-        console.log(gaPlugin);
     }
 };
