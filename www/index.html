@@ -24,32 +24,27 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
-    </head>
-    <body id="stage" class="theme">
-    <h1>Test Google Analytics Plugin</h1>
-    <div class="space"></div>
-    <div>
-        <a href="#" class="btn large" onclick="TrackButtonClicked();">Track Event</a>
-        <a href="#" class="btn large" onclick="VariableButtonClicked();">Track Event with Variable</a>
-        <a href="#" class="btn large" onclick="PageButtonClicked();">Track Page</a>
-    </div>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="GAPlugin.js"></script>
         <script type="text/javascript">
+
+        function nativePluginResultHandler (result) {
+                //alert('nativePluginResultHandler - '+result);
+                console.log('nativePluginResultHandler: '+result);
+
+            }
+        
+            function nativePluginErrorHandler (error) {
+                //alert('nativePluginErrorHandler - '+error);
+                console.log('nativePluginErrorHandler: '+error);
+            }
 
 function TrackButtonClicked() {
     console.log('TrackButtonClicked');
 var gaPlugin;
 gaPlugin = window.plugins.gaPlugin;
-console.log('gaPlugin');
-console.log(gaPlugin);
+// console.log('gaPlugin');
+// console.log(gaPlugin);
 
         gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-35462480-6", 1);
 
@@ -67,5 +62,22 @@ console.log(gaPlugin);
 
     document.addEventListener("deviceready", onDeviceReady, false);
         </script>
+    </head>
+    <body id="stage" class="theme">
+    <h1>Test Google Analytics Plugin</h1>
+    <div class="space"></div>
+    <div>
+        <a href="#" class="btn large" onclick="TrackButtonClicked();">Track Event</a>
+        <a href="#" class="btn large" onclick="VariableButtonClicked();">Track Event with Variable</a>
+        <a href="#" class="btn large" onclick="PageButtonClicked();">Track Page</a>
+    </div>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        
     </body>
 </html>
